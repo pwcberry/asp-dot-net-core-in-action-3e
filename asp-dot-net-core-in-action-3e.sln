@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.31903.59
+# Visual Studio Version 18
+VisualStudioVersion = 18.3.11520.95 d18.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter03", "Chapter03", "{774B98A2-25E8-489E-B964-6A9006E93094}"
 EndProject
@@ -539,13 +539,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{DB9C2F02-5
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecipeApplication.Tests", "Chapter36\B_RecipeApplication_SQLite\test\RecipeApplication.Tests\RecipeApplication.Tests.csproj", "{75C72C03-7D1E-44E6-85CD-E3722D0DD847}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "My_Application", "My_Application", "{EF10ADD4-4818-49C0-9BBE-DECB7065CF40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApplication", "Chapter03\My_Application\MyApplication.csproj", "{126EA98A-3481-186F-F303-D9086CB32350}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{6594CD01-63C2-4E8A-890F-671C2376C855}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -1024,6 +1025,13 @@ Global
 		{75C72C03-7D1E-44E6-85CD-E3722D0DD847}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75C72C03-7D1E-44E6-85CD-E3722D0DD847}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75C72C03-7D1E-44E6-85CD-E3722D0DD847}.Release|Any CPU.Build.0 = Release|Any CPU
+		{126EA98A-3481-186F-F303-D9086CB32350}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{126EA98A-3481-186F-F303-D9086CB32350}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{126EA98A-3481-186F-F303-D9086CB32350}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{126EA98A-3481-186F-F303-D9086CB32350}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{85C0F152-600B-4C78-9F6D-6934C54D111A} = {774B98A2-25E8-489E-B964-6A9006E93094}
@@ -1262,5 +1270,7 @@ Global
 		{58CE0D0D-B42D-4390-9A74-2573B935F651} = {185F7C9E-587D-458E-9F11-A77C2781F61E}
 		{DB9C2F02-55E7-49BB-AD62-A2DD41C8D7D1} = {5F01F013-F969-4DDC-AC27-F99A27C1DFC7}
 		{75C72C03-7D1E-44E6-85CD-E3722D0DD847} = {DB9C2F02-55E7-49BB-AD62-A2DD41C8D7D1}
+		{EF10ADD4-4818-49C0-9BBE-DECB7065CF40} = {774B98A2-25E8-489E-B964-6A9006E93094}
+		{126EA98A-3481-186F-F303-D9086CB32350} = {EF10ADD4-4818-49C0-9BBE-DECB7065CF40}
 	EndGlobalSection
 EndGlobal
