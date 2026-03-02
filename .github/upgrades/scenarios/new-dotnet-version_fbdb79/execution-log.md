@@ -180,3 +180,159 @@ Status: Complete
 
 Success - Batch 3E complete: All Identity RecipeApplication projects now target .NET 10.0 with updated dependencies.
 
+
+## [2026-03-02 14:59] TASK-009: Upgrade Phase 3 Batch 3F (ConsoleClient and ExchangeRateViewer)
+
+Status: Complete
+
+- **Commits**: d2d10c9 - "TASK-009: Upgrade Phase 3 Batch 3F (ConsoleClient & ExchangeRateViewer)"
+- **Files Modified**:
+  - Chapter11/C_GeneratingOpenApiClient/ConsoleClient/ConsoleClient.csproj (net10.0, Microsoft.Extensions.ApiDescription.Client 10.0.3, NSwag.ApiDescription.Client 13.20.0, Newtonsoft.Json 13.0.3)
+  - Chapter11/D_CustomisingGeneration/ConsoleClient/ConsoleClient.csproj (net10.0, OpenAPI packages updated)
+  - Chapter11/E_AddingDescriptions/ConsoleClient/ConsoleClient.csproj (net10.0, OpenAPI packages updated)
+  - Chapter33/B_ExchangeRateViewer/ExchangeRateViewer/ExchangeRateViewer.csproj (net10.0, Microsoft.Extensions.Http.Polly 10.0.3, Swashbuckle 6.9.0)
+- **Code Changes**: Updated all Batch 3F projects to net10.0, aligned Microsoft.Extensions.* packages with 10.0.3, upgraded NSwag tooling for OpenAPI clients, and refreshed Newtonsoft.Json to 13.0.3.
+- **Tests**: `dotnet build` (solution) successful. Verified API client generation by running Chapter11/C ConsoleClient against the Fruit API (temporary `dotnet run` of OpenApiExample) – call succeeded (Created Banana / Fetched Banana).
+
+Success - Batch 3F complete: HTTP client samples upgraded, built cleanly, and client call validated.
+
+
+## [2026-03-02 15:30] TASK-010: Upgrade Phase 4 Batch 4A (Web API projects)
+
+Status: Paused. Task skipped per user instruction.
+
+
+## [2026-03-02 15:38] TASK-011: Upgrade Phase 4 Batch 4B (Tag Helpers and Razor Pages)
+
+Status: Complete
+
+- **Commits**: ea6d1ae - "TASK-011: Upgrade Phase 4 Batch 4B (Tag Helpers & Razor Pages)"
+- **Files Modified**:
+  - Chapter16/A_ToDoList/ToDoList/ToDoList.csproj
+  - Chapter16/B_ExampleBinding_EditProduct/ExampleBinding/ExampleBinding.csproj
+  - Chapter16/C_ExampleBinding_Calculator/ExampleCalculatorBinding/ExampleCalculatorBinding.csproj
+  - Chapter16/D_SimpleCurrencyConverterBindings/SimpleCurrencyConverterBindings/SimpleCurrencyConverterBindings.csproj
+  - Chapter16/E_ListBinding/ListBinding/ListBinding.csproj
+  - Chapter16/F_ValidatingWithDataAnnotations/ValidatingWithDataAnnotations/ValidatingWithDataAnnotations.csproj
+  - Chapter16/G_CurrencyConverter/CurrencyConverter/CurrencyConverter.csproj
+  - Chapter16/H_RazorPageFormLayout/RazorPageFormLayout/RazorPageFormLayout.csproj
+- **Code Changes**: Each project retargeted from net7.0 → net10.0 (no additional package references required per plan).
+- **Tests**: Built each Batch 4B project individually via `dotnet build`. Ran ToDoList project with `dotnet run --urls http://localhost:5131`; verified HTTP 200 response and non-empty content.
+
+Success - Batch 4B complete: all Tag Helper/Razor Pages samples upgraded, build clean, and Razor Pages confirmed rendering.
+
+
+## [2026-03-02 15:41] TASK-012: Upgrade Phase 4 Batch 4C (Background services)
+
+Status: Complete
+
+- **Commits**: b5b035f - "TASK-012: Upgrade Phase 4 Batch 4C (Background services) to .NET 10.0"
+- **Files Modified**:
+  - Chapter34/A_BackgroundServiceCache/BackgroundServiceCache/BackgroundServiceCache.csproj (net10.0, Microsoft.Extensions.Http.Polly 10.0.3)
+  - Chapter34/B_BackgroundServiceDatabaseCache/BackgroundServiceDatabaseCache/BackgroundServiceDatabaseCache.csproj (net10.0, Microsoft.EntityFrameworkCore.* 10.0.3)
+- **Code Changes**: Set both background service samples to net10.0 and aligned resiliency/EF dependencies with 10.0.3 per plan.
+- **Tests**: Built each project via `dotnet build`; BackgroundServiceCache build succeeded with existing nullable warnings; BackgroundServiceDatabaseCache built cleanly.
+
+Success - Batch 4C complete.
+
+
+## [2026-03-02 15:51] TASK-013: Upgrade Phase 4 Batch 4D (Security and CORS examples)
+
+Status: Paused. Task skipped per user instruction.
+
+
+## [2026-03-02 16:04] TASK-014: Upgrade Phase 4 Batch 4E (Miscellaneous ASP.NET Core projects)
+
+Status: Complete
+
+- **Commits**: c3422fe - "TASK-014: Upgrade Phase 4 Batch 4E (Misc projects)"
+- **Files Modified**:
+  - Chapter19/A_WebApplication1/WebApplication1/WebApplication1.csproj
+  - Chapter19/B_FindingAView/FindingAView/FindingAView.csproj
+  - Chapter22/A_FilterPipelineExample/FilterPipelineExample/FilterPipelineExample.csproj
+  - Chapter31/A_CustomMiddleware/CustomMiddleware/CustomMiddleware.csproj
+  - Chapter31/C_LamarExample/LamarExample/LamarExample.csproj
+  - Chapter32/A_CustomTagHelpers/CustomTagHelpers/CustomTagHelpers.csproj
+  - Chapter32/C_CurrencyConverter/CurrencyConverter/CurrencyConverter.csproj
+  - Chapter33/A_SocketExhaustion/SocketExhaustion/SocketExhaustion.csproj
+- **Code Changes**: Retargeted all Batch 4E projects from net7.0 to net10.0; no additional Microsoft.* package references required adjustments.
+- **Tests**: Built each project individually via `dotnet build`; only pre-existing nullable warnings remain (LamarExample, CurrencyConverter).
+
+Success - Batch 4E complete: 8 miscellaneous ASP.NET Core samples now on .NET 10.0 and compile cleanly.
+
+
+## [2026-03-02 16:06] TASK-015: Upgrade Phase 5 Batch 5A (Minimal API examples)
+
+Status: Paused. Task skipped per user instruction.
+
+
+## [2026-03-02 16:12] TASK-016: Upgrade Phase 5 Batch 5B (Routing and Model Binding examples)
+
+Status: Complete
+
+- **Commits**: 3468794 - "TASK-016: Upgrade Phase 5 Batch 5B (Routing & Model Binding)"
+- **Files Modified**:
+  - Chapter06/A_RoutingExample/RoutingExample/RoutingExample.csproj
+  - Chapter06/B_RouteOptionsExample/RouteOptionsExample/RouteOptionsExample.csproj
+  - Chapter07/A_BasicModelBinding/BasicModelBinding/BasicModelBinding.csproj
+  - Chapter07/B_ValidatingWithDataAnnotations/ValidatingWithDataAnnotations/ValidatingWithDataAnnotations.csproj
+  - Chapter14/A_RoutingExamples/RoutingExamples/RoutingExamples.csproj
+- **Code Changes**: Retargeted from net7.0 to net10.0; no additional Microsoft.AspNetCore.* package references required updates.
+- **Tests**: Individual `dotnet build` executed for each project; existing nullable warnings remain (RoutingExample, ValidatingWithDataAnnotations).
+
+Success - Batch 5B complete: Routing/model binding samples now on .NET 10.0 with clean builds.
+
+
+## [2026-03-02 16:18] TASK-017: Upgrade Phase 5 Batch 5C (Dependency Injection examples)
+
+Status: Complete
+
+- **Commits**: 4ebd47b - "TASK-017: Upgrade Phase 5 Batch 5C (Dependency Injection)"
+- **Files Modified**:
+  - Chapter08/A_SendingAnEmailWithoutDI/SendingAnEmailWithoutDI/SendingAnEmailWithoutDI.csproj
+  - Chapter08/B_SendingAnEmailWithDI/SendingAnEmailWithDI/SendingAnEmailWithDI.csproj
+  - Chapter09/A_SendingAnEmailWithDI/SendingAnEmailWithDI/SendingAnEmailWithDI.csproj
+  - Chapter09/B_InjectingMultipleImplementations/InjectingMultipleImplementations/InjectingMultipleImplementations.csproj
+  - Chapter09/C_LifetimeExamples/LifetimeExamples/LifetimeExamples.csproj
+- **Code Changes**: Retargeted each project from net7.0 to net10.0 (no additional package updates required).
+- **Tests**: `dotnet build` executed per project; builds succeeded (existing nullable warnings remain in some samples).
+
+Success - Batch 5C complete: DI examples now compiling on .NET 10.0.
+
+
+## [2026-03-02 16:26] TASK-018: Upgrade Phase 5 Batch 5D (Configuration examples)
+
+Status: Complete
+
+- **Commits**: 9c88677 - "TASK-018: Upgrade Phase 5 Batch 5D (Configuration examples)"
+- **Files Modified**:
+  - Chapter10/C_ReplacingTheDefaultProviders/ReplacingTheDefaultProviders/ReplacingTheDefaultProviders.csproj
+  - Chapter13/A_WebApplication1/WebApplication1/WebApplication1.csproj
+  - Chapter13/B_ATypicalRazorPage/ATypicalRazorPage/ATypicalRazorPage.csproj
+  - Chapter15/A_PageHandlers/PageHandlers/PageHandlers.csproj
+  - Chapter15/B_StatusCodePages/StatusCodePages/StatusCodePages.csproj
+  - Chapter15/C_StatusCodePagesWithReExecute/StatusCodePagesWithReExecute/StatusCodePagesWithReExecute.csproj
+  - Chapter15/D_StatusCodePagesWithReExecuteRazorPages/StatusCodePagesWithReExecuteRazorPages/StatusCodePagesWithReExecuteRazorPages.csproj
+  - Chapter15/E_StatusCodePagesWithRedirectRazorPages/StatusCodePagesWithRedirectRazorPages/StatusCodePagesWithRedirectRazorPages.csproj
+- **Code Changes**: Retargeted all configuration examples from net7.0 → net10.0; no additional package updates required.
+- **Tests**: Each project built via `dotnet build`; existing nullable warnings remain as expected in some samples.
+
+Success - Batch 5D complete: Configuration-focused Razor Pages/configuration samples now on .NET 10.0 with clean builds.
+
+
+## [2026-03-02 16:35] TASK-019: Upgrade Phase 5 Batch 5E (Razor Pages basics)
+
+Status: Complete
+
+- **Commits**: 2a27c41 - "TASK-019: Upgrade Phase 5 Batch 5E (Razor Pages basics)"
+- **Files Modified**:
+  - Chapter17/A_ManageUsers/ManageUsers/ManageUsers.csproj
+  - Chapter17/B_DyamicHtml/DyamicHtml/DyamicHtml.csproj
+  - Chapter17/C_ToDoList/ToDoList/ToDoList.csproj
+  - Chapter17/D_NestedLayouts/NestedLayouts/NestedLayouts.csproj
+  - Chapter17/E_PartialViews/PartialViews/PartialViews.csproj
+- **Code Changes**: Retargeted remaining Chapter17 Razor Pages samples from net7.0 to net10.0 (other Batch 5E projects were upgraded in prior tasks); no additional Razor Pages package references required updates.
+- **Tests**: `dotnet build` executed for each of the five updated projects; builds succeeded with existing nullable warnings noted.
+
+Success - Batch 5E complete: All Razor Pages basics samples now on .NET 10.0.
+
