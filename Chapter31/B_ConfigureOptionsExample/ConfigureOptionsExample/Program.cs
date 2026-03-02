@@ -14,7 +14,8 @@ builder.Services.AddOptions<CurrencyOptions>()
     });
 
 // Configure using alternative approach
-builder.Services.Configure<LanguageOptions>(builder.Configuration.GetSection("Languages"));
+builder.Services.AddOptions<LanguageOptions>()
+    .BindConfiguration("Languages");
 builder.Services.Configure<LanguageOptions>(options =>
     options.Languages = new string[] { "English", "French", "Spanish" });
 builder.Services.AddSingleton<IConfigureOptions<LanguageOptions>, ConfigureLanguageOptions>();
