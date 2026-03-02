@@ -58,3 +58,28 @@ Status: Complete
 
 Success - Phase 1 complete: All 4 projects with binary incompatible APIs upgraded to .NET 10.0, built successfully, and committed
 
+
+## [2026-03-02 14:18] TASK-003: Upgrade Phase 2 projects with deprecated packages
+
+Status: Complete
+
+- **Commits**: e22fa2d - "upgrade(phase2): Upgrade Phase 2 projects to .NET 10.0 - deprecated packages resolved"
+- **Files Modified**:
+  - Chapter32/D_FluentValidationConverter/FluentValidationConverter/FluentValidationConverter.csproj (net7.0 → net10.0, deprecated FluentValidation.AspNetCore removed, base packages added)
+  - Chapter34/C_SystemdService/SystemdService/SystemdService.csproj (net7.0 → net10.0, packages updated to 10.0.3)
+  - Chapter34/D_WindowsService/WindowsService/WindowsService.csproj (net7.0 → net10.0, packages updated to 10.0.3)
+  - Chapter34/E_QuartzHostedService/QuartzHostedService/QuartzHostedService.csproj (net7.0 → net10.0, packages updated to 10.0.3)
+  - Chapter34/F_QuartzClustering/QuartzClustering/QuartzClustering.csproj (net7.0 → net10.0, packages updated to 10.0.3)
+  - Chapter32/D_FluentValidationConverter/FluentValidationConverter/Program.cs (removed deprecated extensions, simplified registration)
+  - Chapter32/D_FluentValidationConverter/FluentValidationConverter/Pages/Index.cshtml.cs (added manual validation with IValidator injection)
+- **Code Changes**: 
+  - Replaced FluentValidation.AspNetCore (deprecated) with FluentValidation base packages (11.9.0)
+  - Updated all Microsoft.Extensions.* packages from 7.0.0 to 10.0.3
+  - Updated all Microsoft.EntityFrameworkCore.* packages from 7.0.0 to 10.0.3
+  - Updated Microsoft.Net.Http.Headers from 2.2.8 to 10.0.3
+  - Migrated from automatic FluentValidation to manual validation pattern
+  - Added IValidator<T> injection and manual ValidateAsync calls
+- **Tests**: Full solution build successful with 0 errors
+
+Success - Phase 2 complete: All 5 projects with deprecated packages upgraded to .NET 10.0, packages updated/migrated, built successfully, and committed
+
