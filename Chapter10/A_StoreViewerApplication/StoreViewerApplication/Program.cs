@@ -2,12 +2,9 @@ using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddOptions<MapSettings>()
-    .BindConfiguration("MapSettings");
-builder.Services.AddOptions<AppDisplaySettings>()
-    .BindConfiguration("AppDisplaySettings");
-builder.Services.AddOptions<List<Store>>()
-    .BindConfiguration("Stores");
+builder.Services.Configure<MapSettings>(builder.Configuration.GetSection("MapSettings"));
+builder.Services.Configure<AppDisplaySettings>(builder.Configuration.GetSection("AppDisplaySettings"));
+builder.Services.Configure<List<Store>>(builder.Configuration.GetSection("Stores"));
 
 var app = builder.Build();
 
