@@ -4,7 +4,7 @@
 
 This document tracks the execution of upgrading ASP.NET Core in Action 3rd Edition solution from .NET 7.0 to .NET 10.0 (LTS). The solution contains 120 projects organized by chapter, which will be upgraded incrementally following a bottom-up, dependency-first approach across two tiers.
 
-**Progress**: 8/24 tasks complete (33%) ![0%](https://progress-bar.xyz/33)
+**Progress**: 16/24 tasks complete (67%) ![0%](https://progress-bar.xyz/67)
 
 ---
 
@@ -120,24 +120,24 @@ This document tracks the execution of upgrading ASP.NET Core in Action 3rd Editi
 
 ---
 
-### [▶] TASK-009: Upgrade Phase 3 Batch 3F (ConsoleClient and ExchangeRateViewer)
+### [✓] TASK-009: Upgrade Phase 3 Batch 3F (ConsoleClient and ExchangeRateViewer) *(Completed: 2026-03-02 03:59)*
 **References**: Plan §Phase 3
 
-- [▶] (1) Update target framework to net10.0 for Batch 3F projects per Plan §Phase 3 Batch 3F (ConsoleClient projects, ExchangeRateViewer, 4 projects)
-- [ ] (2) Update HTTP client packages (NSwag, Refit, or similar) to compatible versions
-- [ ] (3) Update Microsoft.Extensions.* packages to 10.0.3
-- [ ] (4) Build Batch 3F projects and fix compilation errors per Plan (HTTP client API changes)
-- [ ] (5) All Batch 3F projects build with 0 errors (**Verify**)
-- [ ] (6) Test API client generation (run one ConsoleClient project against corresponding API)
-- [ ] (7) API client successfully calls endpoints (**Verify**)
-- [ ] (8) Commit changes with message: "TASK-009: Upgrade Phase 3 Batch 3F (ConsoleClient and ExchangeRateViewer) to .NET 10.0"
+- [✓] (1) Update target framework to net10.0 for Batch 3F projects per Plan §Phase 3 Batch 3F (ConsoleClient projects, ExchangeRateViewer, 4 projects)
+- [✓] (2) Update HTTP client packages (NSwag, Refit, or similar) to compatible versions
+- [✓] (3) Update Microsoft.Extensions.* packages to 10.0.3
+- [✓] (4) Build Batch 3F projects and fix compilation errors per Plan (HTTP client API changes)
+- [✓] (5) All Batch 3F projects build with 0 errors (**Verify**)
+- [✓] (6) Test API client generation (run one ConsoleClient project against corresponding API)
+- [✓] (7) API client successfully calls endpoints (**Verify**)
+- [✓] (8) Commit changes with message: "TASK-009: Upgrade Phase 3 Batch 3F (ConsoleClient and ExchangeRateViewer) to .NET 10.0"
 
 ---
 
-### [ ] TASK-010: Upgrade Phase 4 Batch 4A (Web API projects)
+### [⊘] TASK-010: Upgrade Phase 4 Batch 4A (Web API projects)
 **References**: Plan §Phase 4
 
-- [ ] (1) Update target framework to net10.0 for Batch 4A projects per Plan §Phase 4 Batch 4A (Chapter11, 20 Web API projects, 7 projects)
+- [▶] (1) Update target framework to net10.0 for Batch 4A projects per Plan §Phase 4 Batch 4A (Chapter11, 20 Web API projects, 7 projects)
 - [ ] (2) Update Microsoft.AspNetCore.* packages to 10.0.3
 - [ ] (3) Update Microsoft.AspNetCore.OpenApi to 10.0.3 (if used)
 - [ ] (4) Update Swashbuckle or NSwag packages to compatible versions
@@ -149,34 +149,34 @@ This document tracks the execution of upgrading ASP.NET Core in Action 3rd Editi
 
 ---
 
-### [ ] TASK-011: Upgrade Phase 4 Batch 4B (Tag Helpers and Razor Pages)
+### [✓] TASK-011: Upgrade Phase 4 Batch 4B (Tag Helpers and Razor Pages) *(Completed: 2026-03-02 04:38)*
 **References**: Plan §Phase 4
 
-- [ ] (1) Update target framework to net10.0 for Batch 4B projects per Plan §Phase 4 Batch 4B (Chapter16-18 Tag Helpers, Razor Pages, 8 projects)
-- [ ] (2) Update Microsoft.AspNetCore.Mvc.* packages to 10.0.3
-- [ ] (3) Build Batch 4B projects and fix compilation errors per Plan (Razor runtime compilation API changes)
-- [ ] (4) All Batch 4B projects build with 0 errors (**Verify**)
-- [ ] (5) Test Razor Pages rendering (run one project, verify page renders)
-- [ ] (6) Razor Pages render correctly (**Verify**)
-- [ ] (7) Commit changes with message: "TASK-011: Upgrade Phase 4 Batch 4B (Tag Helpers and Razor Pages) to .NET 10.0"
+- [✓] (1) Update target framework to net10.0 for Batch 4B projects per Plan §Phase 4 Batch 4B (Chapter16-18 Tag Helpers, Razor Pages, 8 projects)
+- [✓] (2) Update Microsoft.AspNetCore.Mvc.* packages to 10.0.3
+- [✓] (3) Build Batch 4B projects and fix compilation errors per Plan (Razor runtime compilation API changes)
+- [✓] (4) All Batch 4B projects build with 0 errors (**Verify**)
+- [✓] (5) Test Razor Pages rendering (run one project, verify page renders)
+- [✓] (6) Razor Pages render correctly (**Verify**)
+- [✓] (7) Commit changes with message: "TASK-011: Upgrade Phase 4 Batch 4B (Tag Helpers and Razor Pages) to .NET 10.0"
 
 ---
 
-### [ ] TASK-012: Upgrade Phase 4 Batch 4C (Background services)
+### [✓] TASK-012: Upgrade Phase 4 Batch 4C (Background services) *(Completed: 2026-03-02 04:41)*
 **References**: Plan §Phase 4
 
-- [ ] (1) Update target framework to net10.0 for Batch 4C projects per Plan §Phase 4 Batch 4C (Chapter34 background services excluding deprecated hosting extensions, 2 projects)
-- [ ] (2) Update Microsoft.Extensions.Hosting to 10.0.3
-- [ ] (3) Build Batch 4C projects and fix compilation errors
-- [ ] (4) All Batch 4C projects build with 0 errors (**Verify**)
-- [ ] (5) Commit changes with message: "TASK-012: Upgrade Phase 4 Batch 4C (Background services) to .NET 10.0"
+- [✓] (1) Update target framework to net10.0 for Batch 4C projects per Plan §Phase 4 Batch 4C (Chapter34 background services excluding deprecated hosting extensions, 2 projects)
+- [✓] (2) Update Microsoft.Extensions.Hosting to 10.0.3
+- [✓] (3) Build Batch 4C projects and fix compilation errors
+- [✓] (4) All Batch 4C projects build with 0 errors (**Verify**)
+- [✓] (5) Commit changes with message: "TASK-012: Upgrade Phase 4 Batch 4C (Background services) to .NET 10.0"
 
 ---
 
-### [ ] TASK-013: Upgrade Phase 4 Batch 4D (Security and CORS examples)
+### [⊘] TASK-013: Upgrade Phase 4 Batch 4D (Security and CORS examples)
 **References**: Plan §Phase 4
 
-- [ ] (1) Update target framework to net10.0 for Batch 4D projects per Plan §Phase 4 Batch 4D (Chapter28-29 Security, CORS, 5 projects)
+- [▶] (1) Update target framework to net10.0 for Batch 4D projects per Plan §Phase 4 Batch 4D (Chapter28-29 Security, CORS, 5 projects)
 - [ ] (2) Update Microsoft.AspNetCore.Authentication.* packages to 10.0.3
 - [ ] (3) Update Microsoft.AspNetCore.Cors to 10.0.3
 - [ ] (4) Build Batch 4D projects and fix compilation errors per Plan (authentication API changes)
@@ -187,19 +187,19 @@ This document tracks the execution of upgrading ASP.NET Core in Action 3rd Editi
 
 ---
 
-### [ ] TASK-014: Upgrade Phase 4 Batch 4E (Miscellaneous ASP.NET Core projects)
+### [✓] TASK-014: Upgrade Phase 4 Batch 4E (Miscellaneous ASP.NET Core projects) *(Completed: 2026-03-02 05:04)*
 **References**: Plan §Phase 4
 
-- [ ] (1) Update target framework to net10.0 for Batch 4E projects per Plan §Phase 4 Batch 4E (Chapter19, 22, 31-33 miscellaneous projects, 10 projects)
-- [ ] (2) Update Microsoft.AspNetCore.* packages to 10.0.3
-- [ ] (3) Update Microsoft.Extensions.* packages to 10.0.3
-- [ ] (4) Build Batch 4E projects and fix compilation errors
-- [ ] (5) All Batch 4E projects build with 0 errors (**Verify**)
-- [ ] (6) Commit changes with message: "TASK-014: Upgrade Phase 4 Batch 4E (Miscellaneous projects) to .NET 10.0"
+- [✓] (1) Update target framework to net10.0 for Batch 4E projects per Plan §Phase 4 Batch 4E (Chapter19, 22, 31-33 miscellaneous projects, 10 projects)
+- [✓] (2) Update Microsoft.AspNetCore.* packages to 10.0.3
+- [✓] (3) Update Microsoft.Extensions.* packages to 10.0.3
+- [✓] (4) Build Batch 4E projects and fix compilation errors
+- [✓] (5) All Batch 4E projects build with 0 errors (**Verify**)
+- [✓] (6) Commit changes with message: "TASK-014: Upgrade Phase 4 Batch 4E (Miscellaneous projects) to .NET 10.0"
 
 ---
 
-### [ ] TASK-015: Upgrade Phase 5 Batch 5A (Minimal API examples)
+### [▶] TASK-015: Upgrade Phase 5 Batch 5A (Minimal API examples)
 **References**: Plan §Phase 5
 
 - [ ] (1) Update target framework to net10.0 for Batch 5A projects per Plan §Phase 5 Batch 5A (Chapter4-5 Minimal API examples, 13 projects)
@@ -212,47 +212,47 @@ This document tracks the execution of upgrading ASP.NET Core in Action 3rd Editi
 
 ---
 
-### [ ] TASK-016: Upgrade Phase 5 Batch 5B (Routing and Model Binding examples)
+### [✓] TASK-016: Upgrade Phase 5 Batch 5B (Routing and Model Binding examples) *(Completed: 2026-03-02 05:12)*
 **References**: Plan §Phase 5
 
-- [ ] (1) Update target framework to net10.0 for Batch 5B projects per Plan §Phase 5 Batch 5B (Chapter6-7, 14 routing, model binding, 5 projects)
-- [ ] (2) Update Microsoft.AspNetCore.* packages to 10.0.3 (if any)
-- [ ] (3) Build Batch 5B projects
-- [ ] (4) All Batch 5B projects build with 0 errors (**Verify**)
-- [ ] (5) Commit changes with message: "TASK-016: Upgrade Phase 5 Batch 5B (Routing and Model Binding) to .NET 10.0"
+- [✓] (1) Update target framework to net10.0 for Batch 5B projects per Plan §Phase 5 Batch 5B (Chapter6-7, 14 routing, model binding, 5 projects)
+- [✓] (2) Update Microsoft.AspNetCore.* packages to 10.0.3 (if any)
+- [✓] (3) Build Batch 5B projects
+- [✓] (4) All Batch 5B projects build with 0 errors (**Verify**)
+- [✓] (5) Commit changes with message: "TASK-016: Upgrade Phase 5 Batch 5B (Routing and Model Binding) to .NET 10.0"
 
 ---
 
-### [ ] TASK-017: Upgrade Phase 5 Batch 5C (Dependency Injection examples)
+### [✓] TASK-017: Upgrade Phase 5 Batch 5C (Dependency Injection examples) *(Completed: 2026-03-02 05:18)*
 **References**: Plan §Phase 5
 
-- [ ] (1) Update target framework to net10.0 for Batch 5C projects per Plan §Phase 5 Batch 5C (Chapter8-9 DI examples, 6 projects)
-- [ ] (2) Update Microsoft.Extensions.DependencyInjection packages to 10.0.3 (if any)
-- [ ] (3) Build Batch 5C projects
-- [ ] (4) All Batch 5C projects build with 0 errors (**Verify**)
-- [ ] (5) Commit changes with message: "TASK-017: Upgrade Phase 5 Batch 5C (Dependency Injection examples) to .NET 10.0"
+- [✓] (1) Update target framework to net10.0 for Batch 5C projects per Plan §Phase 5 Batch 5C (Chapter8-9 DI examples, 6 projects)
+- [✓] (2) Update Microsoft.Extensions.DependencyInjection packages to 10.0.3 (if any)
+- [✓] (3) Build Batch 5C projects
+- [✓] (4) All Batch 5C projects build with 0 errors (**Verify**)
+- [✓] (5) Commit changes with message: "TASK-017: Upgrade Phase 5 Batch 5C (Dependency Injection examples) to .NET 10.0"
 
 ---
 
-### [ ] TASK-018: Upgrade Phase 5 Batch 5D (Configuration examples)
+### [✓] TASK-018: Upgrade Phase 5 Batch 5D (Configuration examples) *(Completed: 2026-03-02 05:26)*
 **References**: Plan §Phase 5
 
-- [ ] (1) Update target framework to net10.0 for Batch 5D projects per Plan §Phase 5 Batch 5D (Chapter10, 13, 15 configuration examples, 12 projects)
-- [ ] (2) Update Microsoft.Extensions.Configuration.* packages to 10.0.3 (if any)
-- [ ] (3) Build Batch 5D projects
-- [ ] (4) All Batch 5D projects build with 0 errors (**Verify**)
-- [ ] (5) Commit changes with message: "TASK-018: Upgrade Phase 5 Batch 5D (Configuration examples) to .NET 10.0"
+- [✓] (1) Update target framework to net10.0 for Batch 5D projects per Plan §Phase 5 Batch 5D (Chapter10, 13, 15 configuration examples, 12 projects)
+- [✓] (2) Update Microsoft.Extensions.Configuration.* packages to 10.0.3 (if any)
+- [✓] (3) Build Batch 5D projects
+- [✓] (4) All Batch 5D projects build with 0 errors (**Verify**)
+- [✓] (5) Commit changes with message: "TASK-018: Upgrade Phase 5 Batch 5D (Configuration examples) to .NET 10.0"
 
 ---
 
-### [ ] TASK-019: Upgrade Phase 5 Batch 5E (Razor Pages basics)
+### [✓] TASK-019: Upgrade Phase 5 Batch 5E (Razor Pages basics) *(Completed: 2026-03-02 05:35)*
 **References**: Plan §Phase 5
 
-- [ ] (1) Update target framework to net10.0 for Batch 5E projects per Plan §Phase 5 Batch 5E (Chapter13-15, 17 Razor Pages basics, 17 projects)
-- [ ] (2) Update Microsoft.AspNetCore.Mvc.RazorPages to 10.0.3 (if explicit reference)
-- [ ] (3) Build Batch 5E projects
-- [ ] (4) All Batch 5E projects build with 0 errors (**Verify**)
-- [ ] (5) Commit changes with message: "TASK-019: Upgrade Phase 5 Batch 5E (Razor Pages basics) to .NET 10.0"
+- [✓] (1) Update target framework to net10.0 for Batch 5E projects per Plan §Phase 5 Batch 5E (Chapter13-15, 17 Razor Pages basics, 17 projects)
+- [✓] (2) Update Microsoft.AspNetCore.Mvc.RazorPages to 10.0.3 (if explicit reference)
+- [✓] (3) Build Batch 5E projects
+- [✓] (4) All Batch 5E projects build with 0 errors (**Verify**)
+- [✓] (5) Commit changes with message: "TASK-019: Upgrade Phase 5 Batch 5E (Razor Pages basics) to .NET 10.0"
 
 ---
 
@@ -329,6 +329,25 @@ This document tracks the execution of upgrading ASP.NET Core in Action 3rd Editi
 - [ ] (7) PR ready for review (**Verify**)
 
 ---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
