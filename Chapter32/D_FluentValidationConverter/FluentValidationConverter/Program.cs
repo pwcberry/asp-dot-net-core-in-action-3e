@@ -1,5 +1,4 @@
 using FluentValidation;
-using FluentValidation.AspNetCore;
 using FluentValidationConverter;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,8 +6,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 
 ValidatorOptions.Global.LanguageManager.Enabled = false; // disables localization
-builder.Services.AddFluentValidationAutoValidation(x => x.DisableDataAnnotationsValidation = true)
-    .AddFluentValidationClientsideAdapters();
 builder.Services.AddValidatorsFromAssemblyContaining<Program>();
 
 builder.Services.AddSingleton<ICurrencyProvider, CurrencyProvider>();

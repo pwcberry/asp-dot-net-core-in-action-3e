@@ -37,3 +37,24 @@ Status: InProgress
 
 InProgress - Actions 3-4 complete, proceeding to action 5 (build validation)
 
+
+## [2026-03-02 14:15] TASK-002: Upgrade Phase 1 projects with binary incompatible APIs
+
+Status: Complete
+
+- **Verified**: .NET 10.0 SDK compatible (versions 10.0.102, 10.0.103)
+- **Commits**: 1eb0d1a - "upgrade(phase1): Upgrade Phase 1 projects to .NET 10.0 - binary incompatible APIs resolved"
+- **Files Modified**: 
+  - Chapter10/A_StoreViewerApplication/StoreViewerApplication/StoreViewerApplication.csproj (net7.0 → net10.0)
+  - Chapter10/B_DesigningForAutomaticBinding/DesigningForAutomaticBinding/DesigningForAutomaticBinding.csproj (net7.0 → net10.0)
+  - Chapter10/D_UsingDifferentEnvironments/UsingDifferentEnvironments/UsingDifferentEnvironments.csproj (net7.0 → net10.0)
+  - Chapter31/B_ConfigureOptionsExample/ConfigureOptionsExample/ConfigureOptionsExample.csproj (net7.0 → net10.0)
+  - Chapter10/A_StoreViewerApplication/StoreViewerApplication/Program.cs (3 API calls replaced)
+  - Chapter10/B_DesigningForAutomaticBinding/DesigningForAutomaticBinding/Program.cs (2 API calls replaced)
+  - Chapter10/D_UsingDifferentEnvironments/UsingDifferentEnvironments/Program.cs (1 API call replaced)
+  - Chapter31/B_ConfigureOptionsExample/ConfigureOptionsExample/Program.cs (1 API call replaced)
+- **Code Changes**: Replaced Configure<T>(IServiceCollection, IConfiguration) with AddOptions<T>().BindConfiguration(section) in 7 locations across 4 projects
+- **Tests**: Full solution build successful with 0 errors (pre-existing warnings only)
+
+Success - Phase 1 complete: All 4 projects with binary incompatible APIs upgraded to .NET 10.0, built successfully, and committed
+
