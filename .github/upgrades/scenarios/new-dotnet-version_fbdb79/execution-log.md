@@ -148,3 +148,21 @@ Status: Complete
 
 Success - Batch 3C complete: All 5 RecipeApplication variants upgraded, built successfully, EF migrations validated.
 
+
+## [2026-03-02 14:43] TASK-007: Upgrade Phase 3 Batch 3D (RecipeApplication features)
+
+Status: Complete
+
+- **Commits**: fefc8cf - "upgrade(phase3-batch3d): Upgrade RecipeApplication feature variants to .NET 10.0"
+- **Files Modified**:
+  - Chapter22/B_RecipeApplication/RecipeApplication/RecipeApplication.csproj (net10.0, EF packages 10.0.3, Swashbuckle 6.9.0, removed AspNetCore.OpenApi)
+  - Chapter26/A_RecipeApplication_SQLite/RecipeApplication/RecipeApplication.csproj (net10.0, Identity/EF packages 10.0.3, CodeGeneration 10.0.2)
+  - Chapter30/A_RecipeApplication_SQLite/RecipeApplication/RecipeApplication.csproj (same updates)
+  - Chapter32/B_RecipeApplication_SQLite/RecipeApplication/RecipeApplication.csproj (same updates)
+  - Chapter36/B_RecipeApplication_SQLite/src/RecipeApplication/RecipeApplication.csproj (same updates)
+  - Chapter36/B_RecipeApplication_SQLite/test/RecipeApplication.Tests/RecipeApplication.Tests.csproj (net10.0, testing packages updated)
+- **Code Changes**: Identity packages upgraded to 10.0.3, EF Core packages to 10.0.3, Microsoft.AspNetCore.OpenApi removed to avoid conflicts, Swashbuckle upgraded, test dependencies updated to .NET 10 compatible versions.
+- **Tests**: Full solution build successful.
+
+Success - Batch 3D complete: 5 RecipeApplication feature variants (and associated tests) upgraded, built successfully, and changes committed.
+
