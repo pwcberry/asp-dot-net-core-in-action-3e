@@ -36,7 +36,6 @@ app.UseAuthorization(); // add authorization middleware
 
 var routes = app.MapGroup("recipe")
     .WithParameterValidation()
-    .WithOpenApi()
     .WithTags("Recipes")
     .RequireAuthorization(); // All requests to APIs must be authenticated
 

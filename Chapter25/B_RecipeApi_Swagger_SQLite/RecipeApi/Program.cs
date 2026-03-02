@@ -57,7 +57,6 @@ app.UseAuthorization();
 
 var routes = app.MapGroup("recipe")
     .WithParameterValidation()
-    .WithOpenApi()
     .WithTags("Recipes")
     .RequireAuthorization();
 

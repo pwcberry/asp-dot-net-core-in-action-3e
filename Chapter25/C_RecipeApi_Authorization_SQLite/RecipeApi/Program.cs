@@ -58,7 +58,6 @@ app.UseAuthorization();
 
 var routes = app.MapGroup("recipe")
     .WithParameterValidation()
-    .WithOpenApi()
     .WithTags("Recipes")
     .RequireAuthorization(); // <-- Require authorization for all endpoints in the group
 
