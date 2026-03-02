@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,7 +22,6 @@ app.UseSwaggerUI();
 
 var routes = app.MapGroup("")
     .WithParameterValidation()
-    .WithOpenApi()
     .WithTags("Recipes");
 
 routes.MapGet("/", async (RecipeService service) =>

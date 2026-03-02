@@ -8,7 +8,7 @@ builder.Services.AddOpenApiDocument();
 WebApplication app = builder.Build();
 
 app.UseOpenApi();
-app.UseSwaggerUi3();
+app.UseSwaggerUi();
 
 var _fruit = new ConcurrentDictionary<string, Fruit>();
 

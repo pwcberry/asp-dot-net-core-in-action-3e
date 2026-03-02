@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
 using System.Security.Claims;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -36,7 +36,6 @@ app.UseAuthorization(); // add authorization middleware
 
 var routes = app.MapGroup("recipe")
     .WithParameterValidation()
-    .WithOpenApi()
     .WithTags("Recipes")
     .RequireAuthorization(); // All requests to APIs must be authenticated
 
