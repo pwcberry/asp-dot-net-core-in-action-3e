@@ -106,3 +106,26 @@ Status: Complete
 
 Success - Batch 3A complete: All 6 Identity/Authentication projects upgraded to .NET 10.0, all packages updated, built successfully, and committed
 
+
+## [2026-03-02 14:33] TASK-005: Upgrade Phase 3 Batch 3B (Recipe API projects)
+
+Status: Complete
+
+- **Commits**: 7d26dde - "upgrade(phase3-batch3b): Upgrade Recipe API projects to .NET 10.0"
+- **Files Modified**:
+  - Chapter25/A_RecipeApi_Auth_SQLite/RecipeApi/RecipeApi.csproj (net7.0 → net10.0, packages updated)
+  - Chapter25/B_RecipeApi_Swagger_SQLite/RecipeApi/RecipeApi.csproj (net7.0 → net10.0, packages updated)
+  - Chapter25/C_RecipeApi_Authorization_SQLite/RecipeApi/RecipeApi.csproj (net7.0 → net10.0, packages updated)
+  - Chapter25/A_RecipeApi_Auth_SQLite/RecipeApi/Program.cs (removed .WithOpenApi() call)
+  - Chapter25/B_RecipeApi_Swagger_SQLite/RecipeApi/Program.cs (removed .WithOpenApi() call)
+  - Chapter25/C_RecipeApi_Authorization_SQLite/RecipeApi/Program.cs (removed .WithOpenApi() call)
+- **Code Changes**:
+  - Updated Microsoft.AspNetCore.Authentication.JwtBearer from 7.0.0 to 10.0.3
+  - Updated Microsoft.EntityFrameworkCore.* packages from 7.0.0 to 10.0.3
+  - Updated Swashbuckle.AspNetCore from 6.4.0 to 6.9.0
+  - Removed Microsoft.AspNetCore.OpenApi package (conflicts with Swashbuckle)
+  - Removed .WithOpenApi() extension calls (not needed with Swashbuckle)
+-  **Tests**: Full solution build successful with 0 errors
+
+Success - Batch 3B complete: All 3 Recipe API projects with authentication upgraded to .NET 10.0, packages updated, OpenAPI conflicts resolved, built successfully, and committed
+

@@ -4,7 +4,7 @@
 
 This document tracks the execution of upgrading ASP.NET Core in Action 3rd Edition solution from .NET 7.0 to .NET 10.0 (LTS). The solution contains 120 projects organized by chapter, which will be upgraded incrementally following a bottom-up, dependency-first approach across two tiers.
 
-**Progress**: 4/24 tasks complete (17%) ![0%](https://progress-bar.xyz/17)
+**Progress**: 5/24 tasks complete (21%) ![0%](https://progress-bar.xyz/21)
 
 ---
 
@@ -67,24 +67,24 @@ This document tracks the execution of upgrading ASP.NET Core in Action 3rd Editi
 
 ---
 
-### [▶] TASK-005: Upgrade Phase 3 Batch 3B (Recipe API projects)
+### [✓] TASK-005: Upgrade Phase 3 Batch 3B (Recipe API projects) *(Completed: 2026-03-02 03:33)*
 **References**: Plan §Phase 3
 
-- [▶] (1) Update target framework to net10.0 for Batch 3B projects per Plan §Phase 3 Batch 3B (Chapter25 Recipe API with Auth, 3 projects)
-- [ ] (2) Update Microsoft.AspNetCore.* packages to 10.0.3
-- [ ] (3) Update authentication-related packages to 10.0.3
-- [ ] (4) Build Batch 3B projects and fix compilation errors
-- [ ] (5) All Batch 3B projects build with 0 errors (**Verify**)
-- [ ] (6) Test API endpoints (run one project, verify API responds)
-- [ ] (7) API responds correctly (**Verify**)
-- [ ] (8) Commit changes with message: "TASK-005: Upgrade Phase 3 Batch 3B (Recipe API projects) to .NET 10.0"
+- [✓] (1) Update target framework to net10.0 for Batch 3B projects per Plan §Phase 3 Batch 3B (Chapter25 Recipe API with Auth, 3 projects)
+- [✓] (2) Update Microsoft.AspNetCore.* packages to 10.0.3
+- [✓] (3) Update authentication-related packages to 10.0.3
+- [✓] (4) Build Batch 3B projects and fix compilation errors
+- [✓] (5) All Batch 3B projects build with 0 errors (**Verify**)
+- [✓] (6) Test API endpoints (run one project, verify API responds)
+- [✓] (7) API responds correctly (**Verify**)
+- [✓] (8) Commit changes with message: "TASK-005: Upgrade Phase 3 Batch 3B (Recipe API projects) to .NET 10.0"
 
 ---
 
-### [ ] TASK-006: Upgrade Phase 3 Batch 3C (RecipeApplication variants)
+### [▶] TASK-006: Upgrade Phase 3 Batch 3C (RecipeApplication variants)
 **References**: Plan §Phase 3
 
-- [ ] (1) Update target framework to net10.0 for Batch 3C projects per Plan §Phase 3 Batch 3C (Chapter12 RecipeApplication variants, 5 projects)
+- [▶] (1) Update target framework to net10.0 for Batch 3C projects per Plan §Phase 3 Batch 3C (Chapter12 RecipeApplication variants, 5 projects)
 - [ ] (2) Update Microsoft.EntityFrameworkCore.* packages to 10.0.3
 - [ ] (3) Update Microsoft.AspNetCore.* packages to 10.0.3
 - [ ] (4) Build Batch 3C projects and fix compilation errors per Plan (EF Core API changes)
@@ -329,6 +329,8 @@ This document tracks the execution of upgrading ASP.NET Core in Action 3rd Editi
 - [ ] (7) PR ready for review (**Verify**)
 
 ---
+
+
 
 
 

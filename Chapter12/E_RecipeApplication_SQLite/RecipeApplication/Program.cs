@@ -22,7 +22,6 @@ app.UseSwaggerUI();
 
 var routes = app.MapGroup("")
     .WithParameterValidation()
-    .WithOpenApi()
     .WithTags("Recipes");
 
 routes.MapGet("/", async (RecipeService service) =>
