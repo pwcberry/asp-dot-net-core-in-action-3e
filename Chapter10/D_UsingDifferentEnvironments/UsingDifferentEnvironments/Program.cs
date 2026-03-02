@@ -2,8 +2,8 @@ using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddOptions<MyValues>()
-    .BindConfiguration(nameof(MyValues));
+builder.Services.Configure<MyValues>(
+    builder.Configuration.GetSection(nameof(MyValues)));
 
 builder.Services.ConfigureHttpJsonOptions(o => o.SerializerOptions.WriteIndented = true);
 

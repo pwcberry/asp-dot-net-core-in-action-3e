@@ -4,10 +4,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // bind the IOptions options
 IConfigurationSection section = builder.Configuration.GetSection("AllOptions");
-builder.Services.AddOptions<BindableOptions>()
-    .BindConfiguration("AllOptions");
-builder.Services.AddOptions<UnbindableOptions>()
-    .BindConfiguration("AllOptions");
+builder.Services.Configure<BindableOptions>(section);
+builder.Services.Configure<UnbindableOptions>(section);
 
 // format minimal APIs for legibility
 builder.Services.ConfigureHttpJsonOptions(o => o.SerializerOptions.WriteIndented = true);

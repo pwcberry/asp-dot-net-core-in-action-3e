@@ -6,16 +6,13 @@ namespace FluentValidationConverter.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly IValidator<InputModel> _validator;
-
         [BindProperty]
         public InputModel Input { get; set; } = null!;
         public string[] Currencies { get; set; }
         public string? Results { get; set; }
-        public IndexModel(ICurrencyProvider provider, IValidator<InputModel> validator)
+        public IndexModel(ICurrencyProvider provider)
         {
             Currencies = provider.GetCurrencies();
-            _validator = validator;
         }
 
         public void OnGet()
@@ -28,20 +25,11 @@ namespace FluentValidationConverter.Pages
             };
         }
         
-        public async Task OnPostAsync()
+        public void OnPost()
         {
-            var validationResult = await _validator.ValidateAsync(Input);
-            if (!validationResult.IsValid)
-            {
-                foreach (var error in validationResult.Errors)
-                {
-                    ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
-                }
-                Results = "Please correct the errors";
-                return;
-            }
-
-            Results = $"Converting {Input.Quantity} {Input.CurrencyFrom} to {Input.CurrencyTo}";
+            Results = ModelState.IsValid
+                ? $"Converting {Input.Quantity} {Input.CurrencyFrom} to {Input.CurrencyTo}"
+                : "Please correct the errors";
         }
 
 

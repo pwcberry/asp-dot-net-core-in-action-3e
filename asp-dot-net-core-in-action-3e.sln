@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.3.11520.95 d18.3
+VisualStudioVersion = 18.3.11520.95
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter03", "Chapter03", "{774B98A2-25E8-489E-B964-6A9006E93094}"
 EndProject
@@ -543,6 +543,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "My_Application", "My_Applic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApplication", "Chapter03\My_Application\MyApplication.csproj", "{126EA98A-3481-186F-F303-D9086CB32350}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "My_Application", "My_Application", "{B600691D-D14F-49DD-8466-434384720570}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApplication", "Chapter04\My_Application\MyApplication.csproj", "{DE1DBE1B-9A7E-8F77-A259-6BEFA0BD5C08}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1029,6 +1033,10 @@ Global
 		{126EA98A-3481-186F-F303-D9086CB32350}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{126EA98A-3481-186F-F303-D9086CB32350}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{126EA98A-3481-186F-F303-D9086CB32350}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE1DBE1B-9A7E-8F77-A259-6BEFA0BD5C08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE1DBE1B-9A7E-8F77-A259-6BEFA0BD5C08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE1DBE1B-9A7E-8F77-A259-6BEFA0BD5C08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE1DBE1B-9A7E-8F77-A259-6BEFA0BD5C08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1272,5 +1280,10 @@ Global
 		{75C72C03-7D1E-44E6-85CD-E3722D0DD847} = {DB9C2F02-55E7-49BB-AD62-A2DD41C8D7D1}
 		{EF10ADD4-4818-49C0-9BBE-DECB7065CF40} = {774B98A2-25E8-489E-B964-6A9006E93094}
 		{126EA98A-3481-186F-F303-D9086CB32350} = {EF10ADD4-4818-49C0-9BBE-DECB7065CF40}
+		{B600691D-D14F-49DD-8466-434384720570} = {ACD2EBAC-DF76-4732-B63B-9DAE9476AE61}
+		{DE1DBE1B-9A7E-8F77-A259-6BEFA0BD5C08} = {B600691D-D14F-49DD-8466-434384720570}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F957032F-AC24-4A22-A22A-E41D755AD688}
 	EndGlobalSection
 EndGlobal
