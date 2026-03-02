@@ -129,3 +129,22 @@ Status: Complete
 
 Success - Batch 3B complete: All 3 Recipe API projects with authentication upgraded to .NET 10.0, packages updated, OpenAPI conflicts resolved, built successfully, and committed
 
+
+## [2026-03-02 14:39] TASK-006: Upgrade Phase 3 Batch 3C (RecipeApplication variants)
+
+Status: Complete
+
+- **Commits**: 16f7edb - "upgrade(phase3-batch3c): Upgrade RecipeApplication variants to .NET 10.0"
+- **Files Modified**:
+  - Chapter12/A_InstallEFCore/RecipeApplication/RecipeApplication.csproj (net7.0 → net10.0, EF packages 7.0.0 → 10.0.3)
+  - Chapter12/B_Migrate_LocalDb/RecipeApplication/RecipeApplication.csproj (net7.0 → net10.0, EF packages updated)
+  - Chapter12/C_Migrate_SQLite/RecipeApplication/RecipeApplication.csproj (net7.0 → net10.0, EF packages updated)
+  - Chapter12/D_RecipeApplication_LocalDb/RecipeApplication/RecipeApplication.csproj (net7.0 → net10.0, removed Microsoft.AspNetCore.OpenApi, EF & Swashbuckle updated)
+  - Chapter12/E_RecipeApplication_SQLite/RecipeApplication/RecipeApplication.csproj (net7.0 → net10.0, removed Microsoft.AspNetCore.OpenApi, EF & Swashbuckle updated)
+  - Chapter12/D_RecipeApplication_LocalDb/RecipeApplication/Program.cs (removed WithOpenApi call)
+  - Chapter12/E_RecipeApplication_SQLite/RecipeApplication/Program.cs (removed WithOpenApi call)
+- **Code Changes**: Updated Microsoft.EntityFrameworkCore.* packages to 10.0.3, Swashbuckle.AspNetCore to 6.9.0, removed Microsoft.AspNetCore.OpenApi dependency and WithOpenApi usage to avoid namespace conflicts.
+- **Tests**: Full solution build successful. `dotnet ef migrations list` executed for Chapter12/E (SQLite) to verify migrations (tool installed globally, migrations listed successfully).
+
+Success - Batch 3C complete: All 5 RecipeApplication variants upgraded, built successfully, EF migrations validated.
+
