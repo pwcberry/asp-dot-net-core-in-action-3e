@@ -17,7 +17,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.Extensions.DiagnosticAdapter" Version="3.1.30" />
+    <PackageReference Include="Microsoft.Extensions.DiagnosticAdapter" Version="3.1.32" />
   </ItemGroup>
 
 </Project>

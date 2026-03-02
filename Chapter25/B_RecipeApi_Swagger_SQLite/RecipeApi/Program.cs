@@ -3,8 +3,9 @@ using System.ComponentModel;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi;
 using Microsoft.Net.Http.Headers;
+using Swashbuckle.AspNetCore.SwaggerGen;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,30 +13,24 @@ builder.Services.AddAuthentication().AddJwtBearer();
 builder.Services.AddAuthorization();
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(x =>
+builder.Services.AddSwaggerGen(options =>
 {
-    x.SwaggerDoc("v1", new OpenApiInfo { Title = "Recipe App", Version = "v1" });
-    // Create an OpenApiSecurityScheme object
-    var security = new OpenApiSecurityScheme()
+    options.SwaggerDoc("v1", new OpenApiInfo { Title = "Recipe App", Version = "v1" });
+
+    // NOTE: see up-to-date documentation at https://github.com/domaindrivendev/Swashbuckle.AspNetCore/blob/master/docs/configure-and-customize-swaggergen.md#add-security-definitions-and-requirements-for-bearer-authentication
+    options.AddSecurityDefinition("bearer", new OpenApiSecurityScheme
     {
-        Name = HeaderNames.Authorization,  // Required
+        Name = HeaderNames.Authorization, // Required
         Type = SecuritySchemeType.ApiKey, // Required
         In = ParameterLocation.Header, // Required
-        // Scheme = "Bearer", // Optional, not used by swashbuckle in this case
-        // BearerFormat = "JWT", // Optional, not used by swashbuckle in this case
-        Description = "JWT Authorization header using the Bearer scheme.",
-        Reference = new OpenApiReference
-        {
-            Id = JwtBearerDefaults.AuthenticationScheme,
-            Type = ReferenceType.SecurityScheme
-        }
-    };
-
-    // Register the authentication requirements
-    x.AddSecurityDefinition(security.Reference.Id, security);
-
-    // Enable the requirement globally
-    x.AddSecurityRequirement(new OpenApiSecurityRequirement { { security, Array.Empty<string>() } });
+        Scheme = "Bearer", // Optional, not used by swashbuckle in this case
+        BearerFormat = "JWT", // Optional, not used by swashbuckle in this case
+        Description = "JWT Authorization header using the Bearer scheme."
+    });
+    options.AddSecurityRequirement(document => new OpenApiSecurityRequirement
+    {
+        [new OpenApiSecuritySchemeReference("bearer", document)] = []
+    });
 });
 
 var connString = builder.Configuration.GetConnectionString("DefaultConnection");
