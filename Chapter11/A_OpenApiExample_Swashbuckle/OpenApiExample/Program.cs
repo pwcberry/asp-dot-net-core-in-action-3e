@@ -1,17 +1,14 @@
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi;
 using System.Collections.Concurrent;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(x =>
-    x.SwaggerDoc("v1", new OpenApiInfo()
-    {
-        Title = "Fruitify",
-        Description = "An API for interacting with fruit stock",
-        Version = "1.0"
-    }));
-
+builder.Services.AddSwaggerGen(options => options.SwaggerDoc("v1", new OpenApiInfo {
+    Title = "Fruitify",
+    Description = "An API for interacting with fruit stock",
+    Version = "1.0"
+}));
 WebApplication app = builder.Build();
 
 app.UseSwagger();
@@ -40,4 +37,5 @@ app.MapPost("/fruit/{id}", (string id, Fruit fruit) =>
 
 
 app.Run();
+
 record Fruit(string Name, int Stock);
