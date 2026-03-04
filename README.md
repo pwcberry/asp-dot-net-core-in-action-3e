@@ -215,3 +215,8 @@ You can generate a certificate on Ubuntu using *install_certificate.sh*. This us
 ## [Chapter 36](https://github.com/andrewlock/asp-dot-net-core-in-action-3e/tree/main/Chapter36)
 * *ExchangeRates* - The basic exchange rate application from 35.2. Includes unit tests for the `CurrencyConverter` class (chapter 35), for the `StatusMiddleware` (section 36.1), for API controllers and minimal API endpoints (section 36.2). It also includes "Test Host" integration tests for the `StatusMiddleware` (section 36.3.1) as well as `WebApplicationFactory`-based integration tests for the whole app (section 36.3.2, 36.3.3, 36.3.4).
 * *RecipeApplication* - Testing a service that relies on an EF Core `DbContext`, as described in section 36.4. The `RecipeServiceTests` class shows how you can test the `RecipeService` using the in-memory SQLite provider. Also shows a custom `WebApplicationFactory` implementation that uses an in-memory database.
+
+## :trumpet: Additions
+
+Additional projects that were created to aid in learning the concepts shown in the book are in the `My_Learning` folder. They are here to reduce clutter.
+
