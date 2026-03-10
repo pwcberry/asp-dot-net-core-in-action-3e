@@ -6,9 +6,6 @@
   <Folder Name="/Chapter03/B_WebApplication1Extended/">
     <Project Path="Chapter03/B_WebApplication1Extended/WebApplication1Extended/WebApplication1Extended.csproj" />
   </Folder>
-  <Folder Name="/Chapter03/My_Application/">
-    <Project Path="Chapter03/My_Application/MyApplication.csproj" />
-  </Folder>
   <Folder Name="/Chapter04/" />
   <Folder Name="/Chapter04/A_CreatingAHoldingPage/">
     <Project Path="Chapter04/A_CreatingAHoldingPage/CreatingAHoldingPage/CreatingAHoldingPage.csproj" />
@@ -27,9 +24,6 @@
   </Folder>
   <Folder Name="/Chapter04/F_ExceptionHandlerMidleware/">
     <Project Path="Chapter04/F_ExceptionHandlerMidleware/ExceptionHandlerMidleware/ExceptionHandlerMidleware.csproj" />
-  </Folder>
-  <Folder Name="/Chapter04/My_Application/">
-    <Project Path="Chapter04/My_Application/MyApplication.csproj" />
   </Folder>
   <Folder Name="/Chapter05/" />
   <Folder Name="/Chapter05/A_BlazorWebAssemblyProject/">
@@ -386,5 +380,9 @@
   </Folder>
   <Folder Name="/Chapter36/B_RecipeApplication_SQLite/test/">
     <Project Path="Chapter36/B_RecipeApplication_SQLite/test/RecipeApplication.Tests/RecipeApplication.Tests.csproj" />
+  </Folder>
+  <Folder Name="/My_Learning/">
+    <Project Path="My_Learning/Chapter03/Chapter03.csproj" />
+    <Project Path="My_Learning/Chapter04/Chapter04.csproj" />
   </Folder>
 </Solution>
