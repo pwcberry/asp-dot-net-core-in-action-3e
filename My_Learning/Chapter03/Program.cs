@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.HttpLogging;
-using MyApplication;
+using MyLearning.Chapter03;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddHttpLogging(opts => opts.LoggingFields = HttpLoggingFields.RequestProperties);

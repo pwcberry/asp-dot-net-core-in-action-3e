@@ -1,4 +1,4 @@
-﻿namespace MyApplication
+﻿namespace MyLearning.Chapter04
 {
     public static class MyExtensions
     {

@@ -1,4 +1,4 @@
-﻿namespace MyApplication;
+﻿namespace MyLearning.Chapter03;
 
 public record Person(string Name, int Age)
 {
