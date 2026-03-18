@@ -1,6 +1,4 @@
-﻿using System.Runtime.Intrinsics.X86;
-
-namespace MyLearning.Chapter05
+﻿namespace MyLearning.Chapter05
 {
     public class Service
     {
