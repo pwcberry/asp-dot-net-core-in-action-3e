@@ -385,5 +385,7 @@
     <Project Path="My_Learning/Chapter03/Chapter03.csproj" />
     <Project Path="My_Learning/Chapter04/Chapter04.csproj" />
     <Project Path="My_Learning/Chapter05/Chapter05.csproj" />
+    <Project Path="My_Learning/Chapter06/MyLearning.Chapter06.csproj" />
+    <Project Path="My_Learning/Data/MyLearning.Data.csproj" />
   </Folder>
 </Solution>
