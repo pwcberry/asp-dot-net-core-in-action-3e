@@ -16,13 +16,13 @@ public partial class NorthwindContext : DbContext
 
     public NorthwindContext(IConfiguration configuration)
     {
-        connectionString = configuration.GetConnectionString("Northwind") ?? throw new InvalidOperationException("Connection string \"Northwind\" not found.");
+        connectionString = configuration.GetSqliteConnection() ?? throw new InvalidOperationException("Connection string not found.");
     }
 
     public NorthwindContext(DbContextOptions<NorthwindContext> options, IConfiguration configuration)
         : base(options)
     {
-        connectionString = configuration.GetConnectionString("Northwind") ?? throw new InvalidOperationException("Connection string \"Northwind\" not found.");
+        connectionString = configuration.GetSqliteConnection() ?? throw new InvalidOperationException("Connection string not found.");
     }
 
     public virtual DbSet<Category> Categories { get; set; }
