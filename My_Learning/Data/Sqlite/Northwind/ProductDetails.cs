@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MyLearning.Data.Sqlite.Northwind;
 
-public partial class ProductDetailsV
+[Table("ProductDetailsV")]
+public partial class ProductDetails
 {
     public int? Id { get; set; }
 
