@@ -1,7 +1,7 @@
 <Solution>
-  <Project Path="E:/Dev/learning/dotnet/asp-dot-net-core-in-action-3e/My_Learning/Chapter03/Chapter03.csproj" />
-  <Project Path="E:/Dev/learning/dotnet/asp-dot-net-core-in-action-3e/My_Learning/Chapter04/Chapter04.csproj" />
-  <Project Path="E:/Dev/learning/dotnet/asp-dot-net-core-in-action-3e/My_Learning/Chapter05/Chapter05.csproj" />
-  <Project Path="E:/Dev/learning/dotnet/asp-dot-net-core-in-action-3e/My_Learning/Chapter06/MyLearning.Chapter06.csproj" />
-  <Project Path="E:/Dev/learning/dotnet/asp-dot-net-core-in-action-3e/My_Learning/Data/MyLearning.Data.csproj" />
+  <Project Path="Chapter03/Chapter03.csproj" />
+  <Project Path="Chapter04/Chapter04.csproj" />
+  <Project Path="Chapter05/Chapter05.csproj" />
+  <Project Path="Chapter06/MyLearning.Chapter06.csproj" />
+  <Project Path="Data/MyLearning.Data.csproj" />
 </Solution>
