@@ -8,11 +8,14 @@ namespace MyLearning.Data
 {
     public static class ConfigurationExtensions
     {
-        public static string? GetSqliteConnection(this IConfiguration configuration)
+        extension(IConfiguration configuration)
         {
-            var path = configuration["DB_PATH"] as string;
+            public string? GetSqliteConnection()
+            {
+                var connection = configuration["ConnectionString"];
 
-            return !string.IsNullOrEmpty(path) ? $"Data Source={path}" : null;
+                return !string.IsNullOrEmpty(connection) ? connection : null;
+            }
         }
     }
 }
