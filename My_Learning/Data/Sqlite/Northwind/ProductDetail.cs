@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace MyLearning.Data.Sqlite.Northwind;
 
 [Table("ProductDetailsV")]
-public partial class ProductDetails
+public partial class ProductDetail
 {
     public int? Id { get; set; }
 
