@@ -381,4 +381,11 @@
   <Folder Name="/Chapter36/B_RecipeApplication_SQLite/test/">
     <Project Path="Chapter36/B_RecipeApplication_SQLite/test/RecipeApplication.Tests/RecipeApplication.Tests.csproj" />
   </Folder>
+  <Folder Name="/_docs/">
+    <File Path="../README.md" />
+  </Folder>
+  <Folder Name="/_support/">
+    <File Path="../Directory.Packages.props" />
+    <File Path="../global.json" />
+  </Folder>
 </Solution>
