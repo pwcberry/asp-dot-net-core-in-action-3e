@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/docs/">
+    <File Path="README.md" />
+  </Folder>
   <Project Path="Chapter03/Chapter03.csproj" />
   <Project Path="Chapter04/Chapter04.csproj" />
   <Project Path="Chapter05/Chapter05.csproj" />
