@@ -6,8 +6,8 @@ Set the connections string as a local secret:
 
 ```powershell
 # At the root of the solution
-dotnet user-secrets init --project ./data/RazorApp.Data.csproj
-dotnet user-secrets set "ConnectionString" $PATH_TO_SQLITE_FILE --project .\data\RazorApp.Data.csproj
+dotnet user-secrets init --project ./Data/MyLearning.Data.csproj
+dotnet user-secrets set "ConnectionString" $PATH_TO_SQLITE_FILE --project ./Data/MyLearning.Data.csproj
 ```
 
 This is more useful than specifying an environment variable when only using a database in a local environment.

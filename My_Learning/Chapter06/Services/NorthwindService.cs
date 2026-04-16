@@ -15,7 +15,8 @@ namespace MyLearning.Chapter06.Services
 
         public Territory? GetTerritoryByName(string name) => context.Territories.FirstOrDefault(t => t.TerritoryDescription!.ToLower() == name.ToLower());
 
-        public IList<OrderSummary> GetOrdersByTerritory(string territoryId) {
+        public IList<OrderSummary> GetOrdersByTerritory(string territoryId)
+        {
             var query = from o in context.Orders
                         join e in context.Employees on o.EmployeeId equals e.Id
                         join et in context.EmployeeTerritories on e.Id equals et.EmployeeId
@@ -32,5 +33,5 @@ namespace MyLearning.Chapter06.Services
         }
     }
 
-public record OrderSummary(int OrderId, int EmployeeId, DateOnly? ShippedDate, string? Territory);
+    public record OrderSummary(int OrderId, int EmployeeId, DateOnly? ShippedDate, string? Territory);
 }
