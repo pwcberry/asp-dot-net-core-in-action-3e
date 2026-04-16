@@ -6,5 +6,6 @@
   <Project Path="Chapter04/Chapter04.csproj" />
   <Project Path="Chapter05/Chapter05.csproj" />
   <Project Path="Chapter06/MyLearning.Chapter06.csproj" />
+  <Project Path="Chapter07/MyLearning.Chapter07.csproj" />
   <Project Path="Data/MyLearning.Data.csproj" />
 </Solution>
