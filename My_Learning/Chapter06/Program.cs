@@ -1,11 +1,7 @@
-using MyLearning.Chapter06.Services;
-using MyLearning.Data.Sqlite;
+using MyLearning.Services;
 
 var builder = WebApplication.CreateBuilder(args);
-
-// When running the app, specify the SQLite database path in the environment variable DB_PATH.
-builder.Services.AddDbContext<NorthwindContext>();
-builder.Services.AddScoped<NorthwindService>();
+builder.Services.AddDatabaseService(MyLearningDatabase.Northwind);
 
 var app = builder.Build();
 
