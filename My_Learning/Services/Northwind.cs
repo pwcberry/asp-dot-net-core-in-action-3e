@@ -1,9 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Primitives;
-using MyLearning.Data.Sqlite;
+﻿using MyLearning.Data.Sqlite;
 using MyLearning.Data.Sqlite.Northwind;
 
-namespace MyLearning.Chapter06.Services
+namespace MyLearning.Services
 {
     public class NorthwindService(NorthwindContext context)
     {
