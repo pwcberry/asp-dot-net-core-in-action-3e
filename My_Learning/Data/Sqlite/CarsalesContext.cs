@@ -3,6 +3,8 @@
 /// 
 /// The command to run the tool was:
 /// dotnet ef dbcontext scaffold "Data Source=<fullpath>\Car_Database.db" Microsoft.EntityFrameworkCore.Sqlite --no-pluralize -c CarsalesContext --namespace MyLearning.Data.Sqlite.Carsales --context-dir "$(pwd)\Sqlite"  --output-dir "$(pwd)\Sqlite\Carsales"
+/// 
+/// The context class' namespace is then changed to MyLearning.Data.Sqlite.
 /// </summary>
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;   
@@ -23,7 +25,6 @@ public partial class CarsalesContext : DbContext
     public CarsalesContext(DbContextOptions<CarsalesContext> options, IConfiguration configuration)
         : base(options)
     {
-
         connectionString = configuration.GetSqliteConnection("CarsalesConnection") ?? throw new InvalidOperationException("Connection string not found.");
     }
 
