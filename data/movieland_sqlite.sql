@@ -1,0 +1,16 @@
+CREATE TABLE movie(id INTEGER PRIMARY KEY ASC, title TEXT NOT NULL, poster_url TEXT, release_date TEXT, revenue INTEGER, runtime INTEGER, overview TEXT);
+
+CREATE TABLE genre(id INTEGER PRIMARY KEY ASC, name TEXT NOT NULL);
+
+CREATE TABLE movie_genre(movie_id INTEGER NOT NULL, genre_id NOT NULL);
+
+CREATE TABLE user(id INTEGER PRIMARY KEY ASC, email TEXT, first_name TEXT, last_name TEXT, handle TEXT, disabled INTEGER, added_at TEXT DEFAULT CURRENT_TIMESTAMP, updated_at TEXT DEFAULT CURRENT_TIMESTAMP);
+
+CREATE TABLE user_rating(user_id INTEGER NOT NULL, movie_id INTEGER, rating INTEGER NOT NULL, added_at TEXT DEFAULT CURRENT_TIMESTAMP);
+
+CREATE TABLE user_access(id INTEGER PRIMARY KEY ASC, user_id INTEGER NOT NULL, session_started_at INTEGER NOT NULL, session_ended_at INTEGER);
+
+CREATE TABLE user_favourite(user_id INTEGER PRIMARY KEY ASC, movie_id INTEGER NOT NULL, added_at TEXT DEFAULT CURRENT_TIMESTAMP);
+
+
+
