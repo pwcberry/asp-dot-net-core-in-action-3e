@@ -10,9 +10,9 @@ namespace MyLearning.Data
     {
         extension(IConfiguration configuration)
         {
-            public string? GetSqliteConnection()
+            public string? GetSqliteConnection(string connectionName)
             {
-                var connection = configuration["ConnectionString"];
+                var connection = configuration[connectionName];
 
                 return !string.IsNullOrEmpty(connection) ? connection : null;
             }
