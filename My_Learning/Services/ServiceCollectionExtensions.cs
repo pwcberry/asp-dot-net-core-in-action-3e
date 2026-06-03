@@ -5,8 +5,9 @@ namespace MyLearning.Services
 {
     public enum MyLearningDatabase
     {
-        Northwind,
-        Carsales
+        Carsales,
+        Movieland,
+        Northwind
     }
 
     public static class ServiceCollectionExtensions
@@ -17,13 +18,17 @@ namespace MyLearning.Services
             {
                 switch (database)
                 {
-                    case MyLearningDatabase.Northwind:
-                        services.AddDbContext<NorthwindContext>();
-                        services.AddScoped<NorthwindService>();
-                        break;
                     case MyLearningDatabase.Carsales:
                         services.AddDbContext<CarsalesContext>();
                         services.AddScoped<CarsalesService>();
+                        break;
+                    case MyLearningDatabase.Movieland:
+                        services.AddDbContext<MovielandContext>();
+                        services.AddScoped<MovielandService>();
+                        break;
+                    case MyLearningDatabase.Northwind:
+                        services.AddDbContext<NorthwindContext>();
+                        services.AddScoped<NorthwindService>();
                         break;
                 }
                 return services;
