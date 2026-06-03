@@ -27,5 +27,15 @@ namespace MyLearning.Services
             // TODO: What happens when there is an error? We should handle that, but for now we will just return true.
             return true;
         }
+
+        public Movie? GetMovie(int movieId)
+        {
+            return context.Movie.FirstOrDefault(m => m.Id == movieId);
+        }
+    }
+
+    namespace Inputs
+    {
+        public record MovieRating(int MovieId, int Rating);
     }
 }
