@@ -5,6 +5,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using MyLearning.Data.Sqlite.Northwind;
+using static MyLearning.Data.Sqlite.SqliteContextHelper;
 
 namespace MyLearning.Data.Sqlite;
 
@@ -14,13 +15,13 @@ public partial class NorthwindContext : DbContext
 
     public NorthwindContext(IConfiguration configuration)
     {
-        connectionString = configuration.GetSqliteConnection() ?? throw new InvalidOperationException("Connection string not found.");
+        connectionString = configuration.GetSqliteConnection("NorthwindConnection") ?? throw new InvalidOperationException("Connection string not found.");
     }
 
     public NorthwindContext(DbContextOptions<NorthwindContext> options, IConfiguration configuration)
         : base(options)
     {
-        connectionString = configuration.GetSqliteConnection() ?? throw new InvalidOperationException("Connection string not found.");
+        connectionString = configuration.GetSqliteConnection("NorthwindConnection") ?? throw new InvalidOperationException("Connection string not found.");
     }
 
     public virtual DbSet<Category> Categories { get; set; }
@@ -60,41 +61,41 @@ public partial class NorthwindContext : DbContext
             entity.ToTable("Category");
 
             entity.Property(e => e.Id).ValueGeneratedNever();
-            entity.Property(e => e.CategoryName).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.Description).HasColumnType(SqliteContextHelper.DefaultTextDbType);
+            entity.Property(e => e.CategoryName).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.Description).HasColumnType(GetTextDbType(4000));
         });
 
         modelBuilder.Entity<Customer>(entity =>
         {
             entity.ToTable("Customer");
 
-            entity.Property(e => e.Id).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.Address).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.City).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.CompanyName).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.ContactName).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.ContactTitle).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.Country).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.Fax).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.Phone).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.PostalCode).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.Region).HasColumnType(SqliteContextHelper.DefaultTextDbType);
+            entity.Property(e => e.Id).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.Address).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.City).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.CompanyName).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.ContactName).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.ContactTitle).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.Country).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.Fax).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.Phone).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.PostalCode).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.Region).HasColumnType(GetTextDbType(4000));
         });
 
         modelBuilder.Entity<CustomerCustomerDemo>(entity =>
         {
             entity.ToTable("CustomerCustomerDemo");
 
-            entity.Property(e => e.Id).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.CustomerTypeId).HasColumnType(SqliteContextHelper.DefaultTextDbType);
+            entity.Property(e => e.Id).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.CustomerTypeId).HasColumnType(GetTextDbType(4000));
         });
 
         modelBuilder.Entity<CustomerDemographic>(entity =>
         {
             entity.ToTable("CustomerDemographic");
 
-            entity.Property(e => e.Id).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.CustomerDesc).HasColumnType(SqliteContextHelper.DefaultTextDbType);
+            entity.Property(e => e.Id).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.CustomerDesc).HasColumnType(GetTextDbType(4000));
         });
 
         modelBuilder.Entity<Employee>(entity =>
@@ -102,29 +103,29 @@ public partial class NorthwindContext : DbContext
             entity.ToTable("Employee");
 
             entity.Property(e => e.Id).ValueGeneratedNever();
-            entity.Property(e => e.Address).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.BirthDate).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.City).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.Country).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.Extension).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.FirstName).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.HireDate).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.HomePhone).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.LastName).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.Notes).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.PhotoPath).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.PostalCode).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.Region).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.Title).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.TitleOfCourtesy).HasColumnType(SqliteContextHelper.DefaultTextDbType);
+            entity.Property(e => e.Address).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.BirthDate).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.City).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.Country).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.Extension).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.FirstName).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.HireDate).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.HomePhone).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.LastName).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.Notes).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.PhotoPath).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.PostalCode).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.Region).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.Title).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.TitleOfCourtesy).HasColumnType(GetTextDbType(4000));
         });
 
         modelBuilder.Entity<EmployeeTerritory>(entity =>
         {
             entity.ToTable("EmployeeTerritory");
 
-            entity.Property(e => e.Id).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.TerritoryId).HasColumnType(SqliteContextHelper.DefaultTextDbType);
+            entity.Property(e => e.Id).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.TerritoryId).HasColumnType(GetTextDbType(4000));
         });
 
         modelBuilder.Entity<Order>(entity =>
@@ -132,26 +133,26 @@ public partial class NorthwindContext : DbContext
             entity.ToTable("Order");
 
             entity.Property(e => e.Id).ValueGeneratedNever();
-            entity.Property(e => e.CustomerId).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.Freight).HasColumnType(SqliteContextHelper.DecimalDbType);
-            entity.Property(e => e.OrderDate).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.RequiredDate).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.ShipAddress).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.ShipCity).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.ShipCountry).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.ShipName).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.ShipPostalCode).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.ShipRegion).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.ShippedDate).HasColumnType(SqliteContextHelper.DefaultTextDbType);
+            entity.Property(e => e.CustomerId).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.Freight).HasColumnType(DecimalDbType);
+            entity.Property(e => e.OrderDate).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.RequiredDate).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.ShipAddress).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.ShipCity).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.ShipCountry).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.ShipName).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.ShipPostalCode).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.ShipRegion).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.ShippedDate).HasColumnType(GetTextDbType(4000));
         });
 
         modelBuilder.Entity<OrderDetail>(entity =>
         {
             entity.ToTable("OrderDetail");
 
-            entity.Property(e => e.Id).HasColumnType(SqliteContextHelper.DefaultTextDbType);
+            entity.Property(e => e.Id).HasColumnType(GetTextDbType(4000));
             entity.Property(e => e.Discount).HasColumnType("DOUBLE");
-            entity.Property(e => e.UnitPrice).HasColumnType(SqliteContextHelper.DecimalDbType);
+            entity.Property(e => e.UnitPrice).HasColumnType(DecimalDbType);
         });
 
         modelBuilder.Entity<Product>(entity =>
@@ -159,9 +160,9 @@ public partial class NorthwindContext : DbContext
             entity.ToTable("Product");
 
             entity.Property(e => e.Id).ValueGeneratedNever();
-            entity.Property(e => e.ProductName).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.QuantityPerUnit).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.UnitPrice).HasColumnType(SqliteContextHelper.DecimalDbType);
+            entity.Property(e => e.ProductName).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.QuantityPerUnit).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.UnitPrice).HasColumnType(DecimalDbType);
         });
 
         modelBuilder.Entity<ProductDetail>(entity =>
@@ -170,13 +171,13 @@ public partial class NorthwindContext : DbContext
                 .HasNoKey()
                 .ToView("ProductDetails_V");
 
-            entity.Property(e => e.CategoryDescription).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.CategoryName).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.ProductName).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.QuantityPerUnit).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.SupplierName).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.SupplierRegion).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.UnitPrice).HasColumnType(SqliteContextHelper.DecimalDbType);
+            entity.Property(e => e.CategoryDescription).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.CategoryName).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.ProductName).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.QuantityPerUnit).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.SupplierName).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.SupplierRegion).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.UnitPrice).HasColumnType(DecimalDbType);
         });
 
         modelBuilder.Entity<Region>(entity =>
@@ -184,7 +185,7 @@ public partial class NorthwindContext : DbContext
             entity.ToTable("Region");
 
             entity.Property(e => e.Id).ValueGeneratedNever();
-            entity.Property(e => e.RegionDescription).HasColumnType(SqliteContextHelper.DefaultTextDbType);
+            entity.Property(e => e.RegionDescription).HasColumnType(GetTextDbType(4000));
         });
 
         modelBuilder.Entity<Shipper>(entity =>
@@ -192,8 +193,8 @@ public partial class NorthwindContext : DbContext
             entity.ToTable("Shipper");
 
             entity.Property(e => e.Id).ValueGeneratedNever();
-            entity.Property(e => e.CompanyName).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.Phone).HasColumnType(SqliteContextHelper.DefaultTextDbType);
+            entity.Property(e => e.CompanyName).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.Phone).HasColumnType(GetTextDbType(4000));
         });
 
         modelBuilder.Entity<Supplier>(entity =>
@@ -201,25 +202,25 @@ public partial class NorthwindContext : DbContext
             entity.ToTable("Supplier");
 
             entity.Property(e => e.Id).ValueGeneratedNever();
-            entity.Property(e => e.Address).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.City).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.CompanyName).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.ContactName).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.ContactTitle).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.Country).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.Fax).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.HomePage).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.Phone).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.PostalCode).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.Region).HasColumnType(SqliteContextHelper.DefaultTextDbType);
+            entity.Property(e => e.Address).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.City).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.CompanyName).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.ContactName).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.ContactTitle).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.Country).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.Fax).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.HomePage).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.Phone).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.PostalCode).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.Region).HasColumnType(GetTextDbType(4000));
         });
 
         modelBuilder.Entity<Territory>(entity =>
         {
             entity.ToTable("Territory");
 
-            entity.Property(e => e.Id).HasColumnType(SqliteContextHelper.DefaultTextDbType);
-            entity.Property(e => e.TerritoryDescription).HasColumnType(SqliteContextHelper.DefaultTextDbType);
+            entity.Property(e => e.Id).HasColumnType(GetTextDbType(4000));
+            entity.Property(e => e.TerritoryDescription).HasColumnType(GetTextDbType(4000));
         });
 
         OnModelCreatingPartial(modelBuilder);

@@ -22,7 +22,7 @@ namespace MyLearning.Services
                         services.AddScoped<NorthwindService>();
                         break;
                     case MyLearningDatabase.Carsales:
-                        //services.AddDbContext<CarsalesContext>();
+                        services.AddDbContext<CarsalesContext>();
                         services.AddScoped<CarsalesService>();
                         break;
                 }
