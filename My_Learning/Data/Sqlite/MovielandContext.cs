@@ -102,6 +102,7 @@ public partial class MovielandContext : DbContext
 
         modelBuilder.Entity<UserAccess>(entity =>
         {
+            entity.HasKey(e => e.Id);
             entity.ToTable("user_access");
 
             entity.Property(e => e.Id)
@@ -118,6 +119,8 @@ public partial class MovielandContext : DbContext
 
             entity.ToTable("user_favourite");
 
+            entity.Property(e => e.Id)
+                .HasColumnName("id");
             entity.Property(e => e.UserId)
                 .ValueGeneratedNever()
                 .HasColumnName("user_id");
@@ -129,10 +132,11 @@ public partial class MovielandContext : DbContext
 
         modelBuilder.Entity<UserRating>(entity =>
         {
-            entity
-                .HasNoKey()
-                .ToTable("user_rating");
+            entity.HasKey(e => e.Id);
+            entity.ToTable("user_rating");
 
+            entity.Property(e => e.Id)
+                .HasColumnName("id");
             entity.Property(e => e.AddedAt)
                 .HasDefaultValueSql("CURRENT_TIMESTAMP")
                 .HasColumnName("added_at");
