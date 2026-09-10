@@ -17,7 +17,7 @@ app.MapGet("/movies/{id}", (MovielandService service, int id) =>
     return movie is not null ? Results.Ok(movie) : Results.NotFound();
 });
 
-app.MapGet("/movies", (MovielandService service, int id) =>
+app.MapGet("/movies", (MovielandService service, [FromQuery] int id) =>
 {
     var movie = service.GetMovie(id);
     return movie is not null ? Results.Ok(movie) : Results.NotFound();

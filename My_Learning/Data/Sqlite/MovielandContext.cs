@@ -18,13 +18,13 @@ public partial class MovielandContext : DbContext
 
     public MovielandContext(IConfiguration configuration)
     {
-        connectionString = configuration.GetSqliteConnection("MovielandConnection") ?? throw new InvalidOperationException("Connection string not found.");
+        connectionString = configuration.GetSqliteConnection("MovielandSqlite") ?? throw new InvalidOperationException("Connection string not found.");
     }
 
     public MovielandContext(DbContextOptions<MovielandContext> options, IConfiguration configuration)
         : base(options)
     {
-        connectionString = configuration.GetSqliteConnection("MovielandConnection") ?? throw new InvalidOperationException("Connection string not found.");
+        connectionString = configuration.GetSqliteConnection("MovielandSqlite") ?? throw new InvalidOperationException("Connection string not found.");
     }
 
     public virtual DbSet<Genre> Genre { get; set; }
