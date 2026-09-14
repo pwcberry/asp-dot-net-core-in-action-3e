@@ -14,11 +14,6 @@ namespace MyLearning.Data
             {
                 var connection = configuration[connectionName];
 
-                if (string.IsNullOrEmpty(connection))
-                {
-                    connection = Environment.GetEnvironmentVariable($"SQLITE_{connectionName.ToUpper()}_CONNECTION");
-                }
-
                 return !string.IsNullOrEmpty(connection) ? connection : null;
             }
         }

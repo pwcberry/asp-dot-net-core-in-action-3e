@@ -1,30 +1,31 @@
-﻿/// <summary>
-/// This class and associated entities were generated using the Entity Framework Core scaffolding tool, based on the Movieland SQLite database generated from this project's scripts.
-/// 
-/// The command to run the tool was:
-/// `dotnet ef dbcontext scaffold "Data Source=<fullpath>\Movieland.db" Microsoft.EntityFrameworkCore.Sqlite --no-pluralize -c MovielandContext --namespace MyLearning.Data.Sqlite.Movieland --context-dir "$(pwd)\Sqlite"  --output-dir "$(pwd)\Sqlite\Carsales"`
-/// 
-/// The context class' namespace is then changed to MyLearning.Data.Sqlite.
-/// </summary>
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using MyLearning.Data.Sqlite.Movieland;
 
 namespace MyLearning.Data.Sqlite;
 
+/// <summary>
+/// This class and associated entities were generated using the Entity Framework Core scaffolding tool, based on the
+/// Movieland SQLite database generated from this project's scripts.
+/// 
+/// The command to run the tool was:
+/// `dotnet ef dbcontext scaffold "Data Source=[full path]\Movieland.db" Microsoft.EntityFrameworkCore.Sqlite --no-pluralize -c MovielandContext --namespace MyLearning.Data.Sqlite.Movieland --context-dir "$(pwd)\Sqlite"  --output-dir "$(pwd)\Sqlite\Movieland"`
+/// 
+/// The context class' namespace is then changed to MyLearning.Data.Sqlite.
+/// </summary>
 public partial class MovielandContext : DbContext
 {
-    private readonly string connectionString;
+    private readonly string _connectionString;
 
     public MovielandContext(IConfiguration configuration)
     {
-        connectionString = configuration.GetSqliteConnection("MovielandSqlite") ?? throw new InvalidOperationException("Connection string not found.");
+        _connectionString = configuration.GetSqliteConnection("MovielandConnection") ?? throw new InvalidOperationException("Connection string not found.");
     }
 
     public MovielandContext(DbContextOptions<MovielandContext> options, IConfiguration configuration)
         : base(options)
     {
-        connectionString = configuration.GetSqliteConnection("MovielandSqlite") ?? throw new InvalidOperationException("Connection string not found.");
+        _connectionString = configuration.GetSqliteConnection("MovielandConnection") ?? throw new InvalidOperationException("Connection string not found.");
     }
 
     public virtual DbSet<Genre> Genre { get; set; }
@@ -41,7 +42,7 @@ public partial class MovielandContext : DbContext
 
     public virtual DbSet<UserRating> UserRating { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder.UseSqlite(connectionString);
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder.UseSqlite(_connectionString);
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

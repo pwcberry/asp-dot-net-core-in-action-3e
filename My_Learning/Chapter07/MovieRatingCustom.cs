@@ -6,28 +6,26 @@
         {
             using var reader = new StreamReader(context.Request.Body);
 
-            string? line1 = await reader.ReadLineAsync(context.RequestAborted);
+            var line1 = await reader.ReadLineAsync(context.RequestAborted);
             if (line1 is null || !line1.StartsWith("user:"))
                 return null;
 
-            string? line2 = await reader.ReadLineAsync(context.RequestAborted);
+            var line2 = await reader.ReadLineAsync(context.RequestAborted);
             if (line2 is null || !line2.StartsWith("movie:"))
                 return null;
 
-            string? line3 = await reader.ReadLineAsync(context.RequestAborted);
+            var line3 = await reader.ReadLineAsync(context.RequestAborted);
             if (line3 is null || !line3.StartsWith("rating:"))
                 return null;
 
-            if (!int.TryParse(line1.Substring("user:".Length), out var userIdValue))
+            if (!int.TryParse(line1.AsSpan(5), out var userIdValue))
                 return null;
 
-            if (!int.TryParse(line2.Substring("movie:".Length), out var movieIdValue))
+            if (!int.TryParse(line2.AsSpan(6), out var movieIdValue))
                 return null;
 
-            if (!int.TryParse(line3.Substring("rating:".Length), out var ratingValue))
-                return null;
-
-            return new MovieRatingCustom(userIdValue, movieIdValue, ratingValue);
+            return int.TryParse(line3.AsSpan(7), out var ratingValue) ?
+                new MovieRatingCustom(userIdValue, movieIdValue, ratingValue) : null;
         }
     }
 }
