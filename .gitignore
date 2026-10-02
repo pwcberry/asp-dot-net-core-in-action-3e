@@ -264,3 +264,4 @@ __pycache__/
 *.pyc
 notes.md
 wip
+/My_Learning/Chapter07/Properties/launchSettings.json
