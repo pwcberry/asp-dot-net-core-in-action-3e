@@ -35,6 +35,12 @@ app.MapGet("/movies", (MovielandService service, [FromQuery(Name = "id")] int[] 
     return result.Count > 0 ? Results.Ok(result) : Results.NotFound();
 });
 
+app.MapGet("/movies/search", (MovielandService service, [AsParameters] MovieSearch search) =>
+{
+    var result = service.SearchMovies(search.Query, search.Page);
+    return result.Count > 0 ? Results.Ok(result) : Results.NotFound();
+});
+
 app.MapPost("/user/rating", (MovielandService service, [FromHeader(Name = "User")] int userId, MovieRating rating) =>
 {
     var result = service.AddRating(userId, rating.MovieId, rating.Rating);

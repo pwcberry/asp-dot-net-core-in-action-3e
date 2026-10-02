@@ -32,6 +32,16 @@ namespace MyLearning.Services
         {
             return context.Movie.FirstOrDefault(m => m.Id == movieId);
         }
+
+        public List<Movie> SearchMovies(string query, int page, int pageSize = 10)
+        {
+            return context.Movie
+                .Where(m => m.Title.Contains(query))
+                .OrderBy(m => m.Title)
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .ToList();
+        }
     }
 
     namespace Inputs
