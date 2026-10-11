@@ -1,5 +1,6 @@
 <Solution>
   <Folder Name="/docs/">
+    <File Path="..\docs\dotnet-templates.txt" />
     <File Path="README.md" />
   </Folder>
   <Project Path="Chapter03/Chapter03.csproj" />
@@ -7,6 +8,7 @@
   <Project Path="Chapter05/Chapter05.csproj" />
   <Project Path="Chapter06/MyLearning.Chapter06.csproj" />
   <Project Path="Chapter07/MyLearning.Chapter07.csproj" />
+  <Project Path="Chapter09/MyLearning.Chapter09.csproj" />
   <Project Path="Data/MyLearning.Data.csproj" />
-  <Project Path="Services/MyLearning.Services.csproj" Id="d131f9a7-95cb-4f25-8b4c-e53e0427f41e" />
+  <Project Path="Services/MyLearning.Services.csproj" />
 </Solution>

@@ -1,6 +1,3 @@
-/// <summary>
-/// Chapter 7: Model binding and validation in minimal APIs
-/// </summary>
 using Microsoft.AspNetCore.Mvc;
 using MyLearning.Services;
 using MyLearning.Services.Inputs;
