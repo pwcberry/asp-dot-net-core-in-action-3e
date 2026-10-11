@@ -1,0 +1,36 @@
+These templates matched your input: -lang='C#'
+
+Template Name                                 Short Name           Language  Tags                              
+--------------------------------------------  -------------------  --------  ----------------------------------
+API Controller                                apicontroller        C#        Web/ASP.NET                       
+ASP.NET Core Empty                            web                  C#,F#     Web/Empty                         
+ASP.NET Core gRPC Service                     grpc                 C#        Web/gRPC/API/Service              
+ASP.NET Core Web API                          webapi               C#,F#     Web/Web API/API/Service           
+ASP.NET Core Web API (native AOT)             webapiaot            C#        Web/Web API/API/Service           
+ASP.NET Core Web App (Model-View-Controller)  mvc                  C#,F#     Web/MVC                           
+ASP.NET Core Web App (Razor Pages)            webapp,razor         C#        Web/MVC/Razor Pages               
+Blazor Web App                                blazor               C#        Web/Blazor/WebAssembly            
+Blazor WebAssembly Standalone App             blazorwasm           C#        Web/Blazor/WebAssembly/PWA        
+Class Library                                 classlib             C#,F#,VB  Common/Library                    
+Console App                                   console              C#,F#,VB  Common/Console                    
+MSTest Playwright Test Project                mstest-playwright    C#        Test/MSTest/Playwright/Desktop/Web
+MSTest Test Project                           mstest               C#,F#,VB  Test/MSTest/Desktop/Web           
+MVC Controller                                mvccontroller        C#        Web/ASP.NET                       
+MVC ViewImports                               viewimports          C#        Web/ASP.NET                       
+MVC ViewStart                                 viewstart            C#        Web/ASP.NET                       
+NUnit Playwright Test Project                 nunit-playwright     C#        Test/NUnit/Playwright/Desktop/Web 
+NUnit Test Project                            nunit                C#,F#,VB  Test/NUnit/Desktop/Web            
+Razor Class Library                           razorclasslib        C#        Web/Razor/Library                 
+Razor Component                               razorcomponent       C#        Web/ASP.NET                       
+Razor Page                                    page                 C#        Web/ASP.NET                       
+Razor View                                    view                 C#        Web/ASP.NET                       
+Windows Forms App                             winforms             C#,VB     Common/WinForms                   
+Windows Forms Class Library                   winformslib          C#,VB     Common/WinForms                   
+Windows Forms Control Library                 winformscontrollib   C#,VB     Common/WinForms                   
+Worker Service                                worker               C#,F#     Common/Worker/Web                 
+WPF Application                               wpf                  C#,VB     Common/WPF                        
+WPF Class Library                             wpflib               C#,VB     Common/WPF                        
+WPF Custom Control Library                    wpfcustomcontrollib  C#,VB     Common/WPF                        
+WPF User Control Library                      wpfusercontrollib    C#,VB     Common/WPF                        
+xUnit Test Project                            xunit                C#,F#,VB  Test/xUnit/Desktop/Web            
+
