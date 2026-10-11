@@ -262,6 +262,10 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+
+# Miscellaneous
 notes.md
 wip
 /My_Learning/Chapter07/Properties/launchSettings.json
+.DS_Store
+
