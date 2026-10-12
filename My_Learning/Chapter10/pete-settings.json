@@ -1,0 +1,10 @@
+{
+  "Preferences": {
+    "Name": "Peter",
+    "Age": 21,
+    "Email": "peter@example.com.au",
+    "Composers": ["Mozart", "Beethoven", "Rachmaninoff", "Shostakovich"],
+    "FavoriteColor": "Green",
+    "FavouriteCuisine": "Japanese"
+  }
+}

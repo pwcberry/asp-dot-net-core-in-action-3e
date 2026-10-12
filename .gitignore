@@ -268,4 +268,5 @@ notes.md
 wip
 /My_Learning/Chapter07/Properties/launchSettings.json
 .DS_Store
+*.http
 
